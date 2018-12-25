@@ -1,8 +1,15 @@
 import * as React from 'react';
 
-export interface IMyClassProps { name: string; isMarried: boolean }
+// ? - optional property, without '?' - mandatory property
+export interface IMyClassProps { name?: string; isMarried: boolean }
 
 class MyClass extends React.Component<IMyClassProps> {
+ 
+  // свойства по-умолчанию:
+  public static defaultProps: Partial<IMyClassProps> = {
+    name: 'techsith'
+  };
+
   public render() {
     return (
       <div>
